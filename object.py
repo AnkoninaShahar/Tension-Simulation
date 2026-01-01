@@ -1,6 +1,6 @@
 class Object:
-    def __init__(self):
-        self.position = (200.0, 0.0)
+    def __init__(self, position):
+        self.position = position
         self.velocity = (0.0, 0.0)
         self.mass = 1
 
@@ -13,15 +13,24 @@ class Object:
         self.velocity = (self.velocity[0] + acceleration_vector[0] / 9, self.velocity[1] + acceleration_vector[1] / 9)
         self.position = (self.position[0] + self.velocity[0], self.position[1] + self.velocity[1])
 
-    def add_froce(self, force):
-        self.forces.__add__(force)
+        self.reset_forces()
+
+    def apply_force(self, force):
+        self.forces += force
+
+    def reset_forces(self):
+        self.forces = [(0.0, 9.81)]
 
     def calculate_force(self) -> tuple[float, float]:
         sum_force = (0.0, 0.0)
         for force in self.forces:
             sum_force = (sum_force[0] + force[0], sum_force[1] + force[1])
+        print(sum_force)
         return sum_force
     
     def get_position(self) -> tuple[float, float]:
         return self.position
+    
+    def get_velocity(self) -> tuple[float, float]:
+        return self.velocity
 
