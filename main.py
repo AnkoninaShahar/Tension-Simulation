@@ -1,8 +1,13 @@
+# AUTHOR      : Shahar Ankonina
+# DATE        : 01/02/2026
+# DESCRIPTION : Physics demo of cloth-like physics
+
 import pygame
 import manager
 
 pygame.init()
 screen = pygame.display.set_mode((1280, 960))
+pygame.display.set_caption("Physics Demo")
 clock = pygame.time.Clock()
 running = True
 
