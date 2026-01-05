@@ -1,4 +1,4 @@
-# Tension-Simulation
+# Tension Simulation
 **AUTHOR . . . . . . .** Shahar Ankonina                                                                              
 **DESCRIPTION. . .** Real-time physics simulation of tension forces between connected nodes
 
